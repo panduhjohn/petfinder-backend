@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const AnimalSchema = new Schema({
-    breed: { type: String, default: '' },
-    size: { type: String, default: '' },
-    gender: { type: String, default: '' },
-    coat: { type: String, default: '' },
+    name: { type: String, default: '', trim: true },
+    breed: { type: String, default: '', trim: true },
+    size: { type: String, default: '', trim: true },
+    gender: { type: String, default: '', trim: true },
+    coat: { type: String, default: '', trim: true },
 });
 
 module.exports = mongoose.model('Animal', AnimalSchema);
