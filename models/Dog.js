@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const AnimalSchema = new Schema({
+const DogSchema = new Schema({
     name: { type: String, default: '', trim: true },
     breed: { type: String, default: '', trim: true },
     size: { type: String, default: '', trim: true },
@@ -9,4 +9,4 @@ const AnimalSchema = new Schema({
     coat: { type: String, default: '', trim: true },
 });
 
-module.exports = mongoose.model('Animal', AnimalSchema);
+module.exports = mongoose.model('Dog', DogSchema);

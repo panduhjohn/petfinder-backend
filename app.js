@@ -9,7 +9,7 @@ const cors = require('cors')
 
 require('dotenv').config();
 
-const AnimalRouter = require('./routes/animal');
+const DogRouter = require('./routes/dog');
 
 const app = express();
 
@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', AnimalRouter);
+app.use('/', DogRouter);
 
 
 // catch 404 and forward to error handler
