@@ -7,6 +7,7 @@ const DogSchema = new Schema({
     size: { type: String, default: '', trim: true },
     gender: { type: String, default: '', trim: true },
     coat: { type: String, default: '', trim: true },
+    description: { type: String, default: '', trim: true },
 });
 
 module.exports = mongoose.model('Dog', DogSchema);

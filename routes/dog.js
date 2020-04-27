@@ -19,6 +19,7 @@ router.get('/dog/:id', (req, res) => {
 
 //! Create Dog
 router.post('/dog', (req, res) => {
+   
     const newDog = new Dog();
 
     newDog.name = req.body.name;
@@ -26,9 +27,10 @@ router.post('/dog', (req, res) => {
     newDog.size = req.body.size;
     newDog.gender = req.body.gender;
     newDog.coat = req.body.coat;
+    newDog.description = req.body.description;
 
     newDog.save().then((dog) => {
-        return res.json(dog);
+        return res.json({ message: 'Dog added', dog });
     });
 });
 
@@ -40,6 +42,9 @@ router.put('/dog/:id', (req, res) => {
         dog.size = req.body.size ? req.body.size : dog.size;
         dog.gender = req.body.gender ? req.body.gender : dog.gender;
         dog.coat = req.body.coat ? req.body.coat : dog.coat;
+        dog.description = req.body.description
+            ? req.body.description
+            : dog.description;
         dog.save().then((dog) => {
             res.json(dog);
         });
